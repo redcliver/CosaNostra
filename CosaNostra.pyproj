@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>CosaNostra</Name>
+    <RootNamespace>CosaNostra</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>3671fa72-e670-465b-8729-de49c49998c5</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <DjangoSettingsModule>CosaNostra.settings</DjangoSettingsModule>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="agenda\admin.py" />
+    <Compile Include="agenda\apps.py" />
+    <Compile Include="agenda\migrations\__init__.py" />
+    <Compile Include="agenda\models.py" />
+    <Compile Include="agenda\tests.py" />
+    <Compile Include="agenda\urls.py" />
+    <Compile Include="agenda\views.py" />
+    <Compile Include="agenda\__init__.py" />
+    <Compile Include="app\forms.py" />
+    <Compile Include="app\models.py" />
+    <Compile Include="app\tests.py" />
+    <Compile Include="app\views.py" />
+    <Compile Include="app\__init__.py" />
+    <Compile Include="app\migrations\__init__.py" />
+    <Compile Include="caixa\admin.py" />
+    <Compile Include="caixa\apps.py" />
+    <Compile Include="caixa\migrations\__init__.py" />
+    <Compile Include="caixa\models.py" />
+    <Compile Include="caixa\tests.py" />
+    <Compile Include="caixa\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="caixa\views.py" />
+    <Compile Include="caixa\__init__.py" />
+    <Compile Include="cliente\admin.py" />
+    <Compile Include="cliente\apps.py" />
+    <Compile Include="cliente\migrations\__init__.py" />
+    <Compile Include="cliente\models.py" />
+    <Compile Include="cliente\tests.py" />
+    <Compile Include="cliente\urls.py" />
+    <Compile Include="cliente\views.py" />
+    <Compile Include="cliente\__init__.py" />
+    <Compile Include="corte\admin.py" />
+    <Compile Include="corte\apps.py" />
+    <Compile Include="corte\migrations\__init__.py" />
+    <Compile Include="corte\models.py" />
+    <Compile Include="corte\tests.py" />
+    <Compile Include="corte\urls.py" />
+    <Compile Include="corte\views.py" />
+    <Compile Include="corte\__init__.py" />
+    <Compile Include="home\admin.py" />
+    <Compile Include="home\apps.py" />
+    <Compile Include="home\migrations\__init__.py" />
+    <Compile Include="home\models.py" />
+    <Compile Include="home\tests.py" />
+    <Compile Include="home\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="home\views.py" />
+    <Compile Include="home\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="CosaNostra\__init__.py" />
+    <Compile Include="CosaNostra\settings.py" />
+    <Compile Include="CosaNostra\urls.py" />
+    <Compile Include="CosaNostra\wsgi.py" />
+    <Compile Include="outros\admin.py" />
+    <Compile Include="outros\apps.py" />
+    <Compile Include="outros\migrations\__init__.py" />
+    <Compile Include="outros\models.py" />
+    <Compile Include="outros\tests.py" />
+    <Compile Include="outros\urls.py" />
+    <Compile Include="outros\views.py" />
+    <Compile Include="outros\__init__.py" />
+    <Compile Include="venda\admin.py" />
+    <Compile Include="venda\apps.py" />
+    <Compile Include="venda\migrations\__init__.py" />
+    <Compile Include="venda\models.py" />
+    <Compile Include="venda\tests.py" />
+    <Compile Include="venda\urls.py" />
+    <Compile Include="venda\views.py" />
+    <Compile Include="venda\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="agenda\" />
+    <Folder Include="agenda\migrations\" />
+    <Folder Include="agenda\templates\" />
+    <Folder Include="app\" />
+    <Folder Include="app\migrations\" />
+    <Folder Include="app\static\" />
+    <Folder Include="app\static\app\" />
+    <Folder Include="app\static\app\content\" />
+    <Folder Include="app\static\app\fonts\" />
+    <Folder Include="app\static\app\scripts\" />
+    <Folder Include="app\templates\" />
+    <Folder Include="app\templates\app\" />
+    <Folder Include="caixa\" />
+    <Folder Include="caixa\migrations\" />
+    <Folder Include="caixa\templates\" />
+    <Folder Include="cliente\" />
+    <Folder Include="cliente\migrations\" />
+    <Folder Include="cliente\templates\" />
+    <Folder Include="corte\" />
+    <Folder Include="corte\migrations\" />
+    <Folder Include="corte\templates\" />
+    <Folder Include="CosaNostra\" />
+    <Folder Include="home\" />
+    <Folder Include="home\migrations\" />
+    <Folder Include="home\templates\" />
+    <Folder Include="home\templates\home\" />
+    <Folder Include="outros\" />
+    <Folder Include="outros\migrations\" />
+    <Folder Include="outros\templates\" />
+    <Folder Include="venda\" />
+    <Folder Include="venda\migrations\" />
+    <Folder Include="venda\templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="agenda\templates\agenda.html" />
+    <Content Include="caixa\templates\caixa.html" />
+    <Content Include="cliente\templates\cliente.html" />
+    <Content Include="corte\templates\corte.html" />
+    <Content Include="home\templates\base.html" />
+    <Content Include="home\templates\home\home.html" />
+    <Content Include="outros\templates\outros.html" />
+    <Content Include="requirements.txt" />
+    <Content Include="db.sqlite3" />
+    <Content Include="app\static\app\content\bootstrap.css" />
+    <Content Include="app\static\app\content\bootstrap.min.css" />
+    <Content Include="app\static\app\content\site.css" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="app\static\app\scripts\bootstrap.js" />
+    <Content Include="app\static\app\scripts\bootstrap.min.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.min.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.min.map" />
+    <Content Include="app\static\app\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.min.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="app\static\app\scripts\modernizr-2.6.2.js" />
+    <Content Include="app\static\app\scripts\respond.js" />
+    <Content Include="app\static\app\scripts\respond.min.js" />
+    <Content Include="app\static\app\scripts\_references.js" />
+    <Content Include="app\templates\app\about.html" />
+    <Content Include="app\templates\app\contact.html" />
+    <Content Include="app\templates\app\index.html" />
+    <Content Include="app\templates\app\layout.html" />
+    <Content Include="app\templates\app\login.html" />
+    <Content Include="app\templates\app\loginpartial.html" />
+    <Content Include="venda\templates\venda.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.html">
+      <SubType>WebBrowser</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.6</Version>
+      <Description>env (Python 3.6 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
