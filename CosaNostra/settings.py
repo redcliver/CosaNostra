@@ -60,7 +60,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
-]
+
 
 ROOT_URLCONF = 'CosaNostra.urls'
 
