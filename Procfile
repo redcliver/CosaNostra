@@ -1,1 +1,1 @@
-web: gunicorn Cosanostra.wsgi --log-file -
+web: gunicorn cosanostra.wsgi --log-file -
