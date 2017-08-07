@@ -26,7 +26,7 @@ SECRET_KEY = 'e0701af1-1c37-429e-bdc8-7f3200c1dd68'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cosanostra664.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -58,9 +58,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
-
 
 ROOT_URLCONF = 'CosaNostra.urls'
 

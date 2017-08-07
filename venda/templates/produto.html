@@ -1,0 +1,20 @@
+﻿{% extends 'base.html' %}
+{% block body %}
+<form>
+    <div class=" row">
+        <div class="col-md-6">
+            Produto:<br />
+            <input class="form-control" name="produto" type="text" />
+        <br />
+        </div>
+    </div>
+    <div class=" row">
+        <div class="col-md-2">
+            Quantidade:<br />
+            <input class="form-control" name="qnt" value="1" type="number" />
+        <br />
+        </div>
+    </div>
+    <button type="submit">Adicionar</button>
+</form>
+{% endblock %}

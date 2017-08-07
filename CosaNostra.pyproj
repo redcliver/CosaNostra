@@ -39,6 +39,9 @@
     <Compile Include="agenda\urls.py" />
     <Compile Include="agenda\views.py" />
     <Compile Include="agenda\__init__.py" />
+    <Compile Include="app\admin.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\forms.py" />
     <Compile Include="app\models.py" />
     <Compile Include="app\tests.py" />
@@ -139,11 +142,29 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="agenda\templates\agenda.html" />
+    <Content Include="app\static\app\content\bootstrap-grid.css" />
+    <Content Include="app\static\app\content\bootstrap-grid.min.css" />
+    <Content Include="app\static\app\content\cosanostra3.css" />
+    <Content Include="app\static\app\content\navbar-static-top.css" />
+    <Content Include="app\static\app\content\navbar.css" />
     <Content Include="caixa\templates\caixa.html" />
+    <Content Include="caixa\templates\extrato.html" />
+    <Content Include="cliente\templates\addcliente.html" />
+    <Content Include="cliente\templates\addcliente1.html" />
+    <Content Include="cliente\templates\buscacliente.html" />
     <Content Include="cliente\templates\cliente.html" />
+    <Content Include="corte\templates\agendado.html" />
     <Content Include="corte\templates\corte.html" />
+    <Content Include="corte\templates\imediato.html" />
+    <Content Include="corte\templates\imediato1.html" />
     <Content Include="home\templates\base.html" />
     <Content Include="home\templates\home\home.html" />
+    <Content Include="outros\templates\addfuncionario.html" />
+    <Content Include="outros\templates\addfuncionario1.html" />
+    <Content Include="outros\templates\addproduto1.html" />
+    <Content Include="outros\templates\addproduto.html" />
+    <Content Include="outros\templates\addservico.html" />
+    <Content Include="outros\templates\addservico1.html" />
     <Content Include="outros\templates\outros.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
@@ -175,6 +196,14 @@
     <Content Include="app\templates\app\layout.html" />
     <Content Include="app\templates\app\login.html" />
     <Content Include="app\templates\app\loginpartial.html" />
+    <Content Include="venda\templates\additem.html" />
+    <Content Include="venda\templates\additem1.html" />
+    <Content Include="venda\templates\bar.html" />
+    <Content Include="venda\templates\fechacomanda.html" />
+    <Content Include="venda\templates\fechacomanda1.html" />
+    <Content Include="venda\templates\novacomanda1.html" />
+    <Content Include="venda\templates\novacomanda.html" />
+    <Content Include="venda\templates\produto.html" />
     <Content Include="venda\templates\venda.html" />
   </ItemGroup>
   <ItemGroup>
