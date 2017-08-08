@@ -36,12 +36,6 @@ def imediato(request):
         return render(request, 'home/home.html', {'title':'Home', 'msg':msg} )
     return render(request, 'imediato.html', {'title':'Corte', 'clientes':clientes, 'funcionarios':funcionarios})
 
-def imediato1(request):
-    cliente1 = request.GET.get('cliente')
-    func1 =request.GET.get('funcionario')
-    serv1 =request.GET.get('corte')
-
-    return render(request, 'imediato1.html', {'title':'Corte'})
 
 def agendado(request):
     hoje = datetime.datetime.now()
