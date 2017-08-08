@@ -1,4 +1,38 @@
 ﻿{% extends 'base.html' %}
 {% block body %}
-Agenda
+<div class="container">
+        <form method="post" action="/agenda/" class="navbar-form navbar-left">
+            {% csrf_token %}
+            <div class="form-group">
+              <input name="data" type="date" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Buscar</button>
+          </form>
+        <h3>Data:{{hoje|date:"d/m/Y"}}</h3>
+    <form method="post" action="confirmacao">
+        {% csrf_token %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Horario</th>
+                    <th>Nome</th>
+                    <th>Funcionario</th>
+                    <th>Serviço</th>
+                    <th>Confirmação</th>
+               </tr>
+            </thead>
+            <tbody>
+                {% for agenda in agendas %}
+                <tr>
+                    <td>{{agenda.data|date:"f A"}}</td>
+                    <td>{{agenda.cliente1}}</td>
+                    <td>{{agenda.func1}}</td>
+                    <td>{{agenda.servico1}}</td>
+                    <td><button type="submit" name="confirmacao" value={{agenda.id}}>Confirmar</button></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>
+    </div>
 {% endblock %}

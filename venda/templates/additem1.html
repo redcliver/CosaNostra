@@ -45,8 +45,8 @@
                 <tr>
                     <td>{{item.produto1.nome}}</td>
                     <td>{{item.qnt}}</td>
-                    <td>{{item.produto1.preco}}</td>
-                    <td>{{item.total}}</td>
+                    <td>R$ {{item.produto1.preco}}</td>
+                    <td>R$ {{item.total}}</td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -54,7 +54,7 @@
 </div>
 <div class="row">
     <div class="col-md-4 col-md-offset-8">
-        <h3>Total: {{cmd1.total}}</h3>
+        <h3>Total: R${{cmd1.total}}</h3>
     </div>
 </div>
 {% endblock %}

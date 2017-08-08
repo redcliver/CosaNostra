@@ -4,5 +4,6 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^$', views.agenda),
+    url(r'^$', views.agenda1),
+    url(r'^confirmacao$', views.confirmacao),
     ]

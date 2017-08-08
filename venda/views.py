@@ -3,6 +3,7 @@ from outros.models import produto, comanda, item
 from decimal import *
 from caixa.models import caixa
 
+
 # Create your views here.
 
 def venda(request):
@@ -12,7 +13,8 @@ def bar(request):
     return render(request, 'bar.html', {'title':'Bar'})
 
 def produto1(request):
-    return render(request, 'produto.html', {'title':'Produto'})
+    produtos = produto.objects.all()
+    return render(request, 'produto.html', {'title':'Produto', 'produtos':produtos})
 
 def novacomanda(request):
     return render(request, 'novacomanda.html', {'title':'Abrir Comanda'})
@@ -38,7 +40,8 @@ def novacomanda1(request):
     return render(request, 'novacomanda1.html', {'title':'Adicionar Item', 'comanda1':comanda1, 'produtos':produtos})
 
 def additem(request):
-    return render(request, 'additem.html', {'title':'Adicionar Item'})
+    cmd1 = comanda.objects.filter(estado='O')
+    return render(request, 'additem.html', {'title':'Adicionar Item', 'cmd1':cmd1})
 
 def additem1(request):
     comanda1 = request.GET.get('comanda')
@@ -60,7 +63,8 @@ def additem1(request):
     return render(request, 'additem1.html', {'title':'Adicionar Item', 'comanda1':comanda1, 'produtos':produtos, 'teste':teste, 'cmd1':cmd1})
 
 def fechacomanda(request):
-    return render(request, 'fechacomanda.html', {'title':'Fechar Comanda'})
+    cmd1 = comanda.objects.filter(estado='O')
+    return render(request, 'fechacomanda.html', {'title':'Fechar Comanda', 'cmd1':cmd1})
 
 def fechacomanda1(request):
     comanda1 = request.GET.get('comanda')

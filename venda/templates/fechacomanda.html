@@ -3,9 +3,13 @@
 <form method="get" action="/venda/fechacomanda1">
     <div class=" row">
         <div class="col-md-2">
-             Comanda N°:<br />
-            <input class="form-control" name="comanda" type="number" />
-            <br />
+            Comanda:<br />
+            <select name="comanda" class="form-control">
+                {% for comanda in cmd1 %}
+                <option value="{{comanda.num}}">{{comanda.num}}</option>
+                {% endfor %}
+            </select>
+        <br />
         </div>
     </div>
     <br />

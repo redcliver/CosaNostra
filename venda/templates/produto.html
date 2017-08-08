@@ -4,7 +4,11 @@
     <div class=" row">
         <div class="col-md-6">
             Produto:<br />
-            <input class="form-control" name="produto" type="text" />
+            <select name="produto" class="form-control">
+                {% for produto in produtos %}
+                <option value="{{produto.id}}">{{produto.nome}}</option>
+                {% endfor %}
+            </select>
         <br />
         </div>
     </div>

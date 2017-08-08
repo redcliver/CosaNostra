@@ -1,4 +1,5 @@
 from django.db import models
+from cliente.models import cliente
 import datetime
 # Create your models here.
 
@@ -51,7 +52,7 @@ class servico1(models.Model):
     funcionario2 = models.ForeignKey(funcionario)
 
     def __str__(self):
-        return self.servico2
+        return str(self.id)
 
 class comanda(models.Model):
     STATE = (
@@ -62,9 +63,17 @@ class comanda(models.Model):
     estado = models.CharField(max_length=1, choices=STATE)
     num = models.IntegerField()
     data = models.DateTimeField(default=datetime.datetime.now())
-    servicos = models.ManyToManyField(servico1)
     produtos = models.ManyToManyField(item)
     total = models.DecimalField(max_digits=5, decimal_places=2)
     
     def __str__(self):
         return self.estado
+
+class comanda_corte(models.Model):
+    id = models.AutoField(primary_key=True)
+    data = models.DateTimeField(default=datetime.datetime.now())
+    servicos = models.ManyToManyField(servico1)
+    total = models.DecimalField(max_digits=5, decimal_places=2)
+    
+    def __str__(self):
+        return str(self.id)
