@@ -1,0 +1,42 @@
+﻿{% extends 'base.html' %}
+{% block body %}
+<form method="post">
+    {% csrf_token %}
+    <div class=" row">
+        <div class="col-md-2">
+             Comanda N°:<br />
+            <input class="form-control" name="comanda" type="text" />
+            <br />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-default">Proximo</button>
+    </form>
+    <div class="row">
+    <table class="table">
+            <thead>
+                <tr>
+                    <th>Serviço</th>
+                    <th>Valor</th>
+                    <th>Funcionário</th>
+                    <th>Data</th>
+               </tr>
+            </thead>
+            <tbody>
+                {% for servico1 in teste %}
+                <tr>
+                    <td>{{servico1.servico2.nome}}</td>
+                    <td>R$ {{servico1.servico2.preco}}</td>
+                    <td>{{servico1.funcionario2.nome}}</td>
+                    <td>{{cmd1.data|date:"H:i d/m/y"}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+<div class="row">
+    <div class="col-md-4 col-md-offset-8">
+        <h3>Total: R${{cmd1.total}}</h3>
+    </div>
+</div>
+
+{% endblock %}

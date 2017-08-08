@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import produto, servico, funcionario
+from .models import produto, servico, funcionario, comanda, comanda_corte
 
 # Create your views here.
 
@@ -60,3 +60,21 @@ def addfuncionario1(request):
         msg = "Funcionario Registrado com sucesso!"
         return render(request, 'home/home.html', {'title':'Home', 'msg':msg})
     return render(request, 'addfuncionario1.html', {'title':'Confirma Funcionario', 'nome':nome, 'func':func, 'tel1':tel1, 'tel2':tel2})
+
+def buscacomanda(request):
+    if request.method == 'POST':
+        comanda1 = request.POST.get('comanda')
+        comanda1 = int(comanda1)
+        cmd1 = comanda.objects.filter(id=comanda1).get()
+        teste = cmd1.produtos.all()
+        return render(request, 'buscacomanda.html', {'title':'Buscar comanda', 'cmd1':cmd1, 'teste':teste})
+    return render(request, 'buscacomanda.html', {'title':'Buscar comanda bar'})
+
+def buscacomandacorte(request):
+    if request.method == 'POST':
+        comanda1 = request.POST.get('comanda')
+        comanda1 = int(comanda1)
+        cmd1 = comanda_corte.objects.filter(id=comanda1).get()
+        teste = cmd1.servicos.all()
+        return render(request, 'buscacomandacorte.html', {'title':'Buscar comanda corte', 'cmd1':cmd1, 'teste':teste})
+    return render(request, 'buscacomandacorte.html', {'title':'Buscar comanda corte'})
