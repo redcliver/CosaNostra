@@ -14,6 +14,26 @@ def bar(request):
 
 def produto1(request):
     produtos = produto.objects.all()
+    if request.method == 'POST':
+        comanda2 = '0'
+        prod = request.POST.get('produto')
+        qnt = request.POST.get('qnt')
+        prod1 = produto.objects.filter(id=prod).get()
+        total1 = prod1.preco*int(qnt)
+        criaitem = item(produto1=prod1, qnt=qnt, total=total1)
+        criaitem.save()
+        teste = item.objects.filter(id=criaitem.id).get()
+        criacomanda = comanda(num=comanda2, total=total1, estado='C')
+        criacomanda.save()
+        criacomanda.produtos.add(teste)
+        criacomanda.save()
+        caixatotal1 = caixa.objects.latest('id')
+        caixatotal1.total = caixatotal1.total+criacomanda.total
+        desc1 = "Comanda N°: " + str(criacomanda.id)
+        caixatotal2 = caixa(total=caixatotal1.total, tipo='E', desc=desc1)
+        caixatotal2.save()
+        msg = "Venda registrada com sucesso!"
+        return render(request, 'home/home.html', {'title':'Home', 'msg':msg})
     return render(request, 'produto.html', {'title':'Produto', 'produtos':produtos})
 
 def novacomanda(request):
