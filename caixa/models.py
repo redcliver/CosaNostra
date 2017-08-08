@@ -12,7 +12,7 @@ class caixa(models.Model):
     tipo = models.CharField(max_length=1, choices=TIPO)
     data = models.DateTimeField(default=datetime.datetime.now())
     desc = models.CharField(max_length=100)
-    total = models.DecimalField(max_digits=5, decimal_places=2)
+    total = models.DecimalField(max_digits=6, decimal_places=2)
 
-    def __unicode__(self):
-        return self.id
+    def __str__(self):
+        return str(self.id)
