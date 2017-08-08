@@ -4,6 +4,7 @@ from caixa.models import caixa
 from cliente.models import cliente
 from outros.models import funcionario, servico1, servico, comanda_corte
 from agenda.models import agenda
+from decimal import *
 
 # Create your views here.
 
@@ -26,9 +27,10 @@ def imediato(request):
         comanda1 = comanda_corte(total=total1)
         comanda1.save()
         caixatotal1 = caixa.objects.latest('id')
-        caixatotal1.total = caixatotal1.total+comanda1.total
+        caixatotal1.total = caixatotal1.total + comanda1.total
         desc1 = "Comanda_Corte N°: " + str(comanda1.id)
-        caixatotal2 = caixa(total=caixatotal1.total, tipo='E', desc=desc1)
+        total2 = Decimal(caixatotal1.total)
+        caixatotal2 = caixa(total=total2, tipo='E', desc=desc1)
         caixatotal2.save()
         comanda1.servicos.add(serv)
         comanda1.save()
