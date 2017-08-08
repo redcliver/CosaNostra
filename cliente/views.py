@@ -7,12 +7,6 @@ def cliente1(request):
     return render(request, 'cliente.html', {'title':'Cliente'})
 
 def addcliente(request):
-    return render(request, 'addcliente.html', {'title':'Adiciona cliente'})
-
-def addcliente1(request):
-    nome1 = request.GET.get('nome')
-    tel2 = request.GET.get('tel1')
-    tel3 = request.GET.get('tel2')
     if request.method == 'POST':
         nome1 = request.POST.get('nome')
         tel2 = request.POST.get('tel1')
@@ -21,10 +15,11 @@ def addcliente1(request):
         cliente1.save()
         msg = "Cliente registrado com sucesso!"
         return render(request, 'home/home.html', {'title':'Home', 'msg':msg})
-    return render(request, 'addcliente1.html', {'title':'Confirmar dados', 'nome':nome1, 'tel1':tel2, 'tel2':tel3})
+    return render(request, 'addcliente.html', {'title':'Adiciona cliente'})
+
+
 
 def buscacliente(request):
-    
     if request.method == 'POST':
         nome1 = request.POST.get('nome')
         clientes = cliente.objects.filter(nome__icontains=nome1)

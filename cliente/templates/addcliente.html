@@ -1,6 +1,7 @@
 ﻿{% extends 'base.html' %}
 {% block body %}
-<form method="get" action="/cliente/addcliente1">
+<form method="post" >
+    {% csrf_token %}
     <div class="row">
         <div class=" row">
             <div class="col-md-6">
@@ -12,14 +13,14 @@
         <div class="row">
             <div class="col-md-4">
                 Telefone 1:<br />
-                <input class="form-control" size="11" maxlength="11" name="tel1" type="text" />
+                <input class="form-control" name="tel1" type="text" />
                 <br />
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
                 Telefone 2:<br />
-                <input class="form-control" size="11" maxlength="11" name="tel2" type="text" />
+                <input class="form-control" name="tel2" type="text" />
                 <br />
             </div>
         </div>
