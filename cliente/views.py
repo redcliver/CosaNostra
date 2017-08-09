@@ -25,3 +25,6 @@ def buscacliente(request):
         clientes = cliente.objects.filter(nome__icontains=nome1)
         return render(request, 'buscacliente.html', {'title':'Buscar cliente', 'clientes':clientes})
     return render(request, 'buscacliente.html', {'title':'Buscar cliente'})
+
+def editacliente(request):
+    return render(request, 'editacliente.html', {'title':'Edita cliente'})
