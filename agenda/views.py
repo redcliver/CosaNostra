@@ -11,7 +11,7 @@ def agenda1(request):
     
     if request.method == 'POST':
         hoje = request.POST.get('data')
-        agendas = agenda.objects.filter(data__icontains=hoje, confirmado='N')
+        agendas = agenda.objects.filter(data__icontains=hoje, confirmado='N').order_by('data')
         return render(request, 'agenda.html', {'title':'Agenda', 'agendas':agendas, 'hoje':hoje})
     return render(request, 'agenda.html', {'title':'Agenda', 'agendas':agendas, 'hoje':hoje})
 
