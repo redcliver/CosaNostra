@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import produto, servico, funcionario, comanda, comanda_corte
+from .models import produto, servico, funcionario, comanda, comanda_corte, item
 
 # Create your views here.
 
@@ -49,6 +49,16 @@ def buscacomanda(request):
         cmd1 = comanda.objects.filter(id=comanda1).get()
         teste = cmd1.produtos.all()
         return render(request, 'buscacomanda.html', {'title':'Buscar comanda', 'cmd1':cmd1, 'teste':teste})
+    if request.method == 'GET' and request.GET.get('item') != None:
+        item1 = request.GET.get('item')
+        comanda1 = request.GET.get('comanda')
+        cmd2 = comanda.objects.filter(id=comanda1).get()
+        item2 = item.objects.filter(id=item1).get()
+        cmd2.total = cmd2.total-item2.produto1.preco
+        cmd2.save()
+        item2.delete()
+        msg = "Item deletado com sucesso!"
+        return render(request, 'home/home.html', {'title':'Home', 'msg':msg})
     return render(request, 'buscacomanda.html', {'title':'Buscar comanda bar'})
 
 def buscacomandacorte(request):

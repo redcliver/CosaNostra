@@ -52,7 +52,7 @@ class servico1(models.Model):
     funcionario2 = models.ForeignKey(funcionario)
 
     def __str__(self):
-        return str(self.id)
+        return self.servico2.nome
 
 class comanda(models.Model):
     STATE = (
