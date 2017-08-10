@@ -7,13 +7,6 @@ def outros(request):
     return render(request, 'outros.html', {'title':'Outros'})
 
 def addproduto(request):
-    return render(request, 'addproduto.html', {'title':'Adicionar Produto'})
-
-def addproduto1(request):
-    nome = request.GET.get('nome')
-    preco = request.GET.get('preco')
-    tipo = request.GET.get('tipo')
-    obs = request.GET.get('obs')
     if request.method == 'POST':
         nome = request.POST.get('nome')
         preco = request.POST.get('preco')
@@ -23,7 +16,8 @@ def addproduto1(request):
         produto1.save()
         msg = "Produto cadastrado com sucesso!"
         return render(request, 'home/home.html', {'title':'Home', 'msg':msg})
-    return render(request, 'addproduto1.html', {'title':'Adicionar Produto', 'nome':nome, 'preco':preco, 'tipo':tipo, 'obs':obs})
+    return render(request, 'addproduto.html', {'title':'Adicionar Produto'})
+
 
 def addservico(request):
     return render(request, 'addservico.html', {'title':'Adicionar Servico'})
