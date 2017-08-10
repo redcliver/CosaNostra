@@ -20,12 +20,6 @@ def addproduto(request):
 
 
 def addservico(request):
-    return render(request, 'addservico.html', {'title':'Adicionar Servico'})
-
-def addservico1(request):
-    nome = request.GET.get('nome')
-    preco = request.GET.get('preco')
-    obs = request.GET.get('obs')
     if request.method == 'POST':
         nome = request.POST.get('nome')
         preco = request.POST.get('preco')
@@ -34,7 +28,7 @@ def addservico1(request):
         servico1.save()
         msg = "Servico cadastrado com sucesso!"
         return render(request, 'home/home.html', {'title':'Home', 'msg':msg})
-    return render(request, 'addservico1.html', {'title':'Confirmar Servico', 'nome':nome, 'preco':preco, 'obs':obs})
+    return render(request, 'addservico.html', {'title':'Adicionar Servico'})
 
 def addfuncionario(request):
     if request.method == 'POST':
