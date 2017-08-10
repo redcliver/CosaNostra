@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import caixa
+from outros.models import comanda_corte, funcionario, servico1
 import datetime
 from decimal import *
 # Create your views here.
@@ -38,3 +39,11 @@ def fechamento(request):
         msg = "Caixa fechado com sucesso!"
         return render(request, 'home/home.html', {'title':'Home', 'msg':msg})
     return render(request, 'fechamento.html', {'title':'Fechamento', 'total':total})
+
+def extratodetalhado(request):
+    hoje = datetime.date.today()
+    jeff = funcionario.objects.filter(nome__icontains="jef").get()
+    rubens = funcionario.objects.filter(nome__icontains="rub").get()
+    cmd_jefferson = servico1.objects.all().filter(funcionario2__nome=jeff)
+    cmd_rubens = servico1.objects.all().filter(funcionario2__nome=rubens)
+    return render(request, 'extratodetalhado.html', {'title':'Extrato detalhado', 'cmd_jefferson':cmd_jefferson, 'cmd_rubens':cmd_rubens})
