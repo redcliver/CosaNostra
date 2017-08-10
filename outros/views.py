@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import produto, servico, funcionario, comanda, comanda_corte, item
+from .models import produto, servico, funcionario, comanda, comanda_corte, item, produto
 
 # Create your views here.
 
@@ -69,3 +69,30 @@ def buscacomandacorte(request):
         teste = cmd1.servicos.all()
         return render(request, 'buscacomandacorte.html', {'title':'Buscar comanda corte', 'cmd1':cmd1, 'teste':teste})
     return render(request, 'buscacomandacorte.html', {'title':'Buscar comanda corte'})
+
+def editaprod(request):
+    if request.method == 'POST' and request.POST.get('prod') != None:
+        prod1 = request.POST.get('prod')
+        produtos = produto.objects.filter(nome__icontains=prod1)
+        return render(request, 'editaprod.html', {'title':'Edita produto', 'produtos':produtos})
+    if request.method == 'GET' and request.GET.get('id') != None:
+        produto_id = request.GET.get('id')
+        return render(request, 'editaprod1.html', {'title':'Edita produto','produto_id':produto_id})
+    return render(request, 'editaprod.html', {'title':'Edita produto'})
+
+def editaprod1(request):
+    produto_id = request.GET.get('id')
+    produto1 = produto.objects.filter(id=produto_id).get()
+    if request.method == 'POST':
+        produto_nome = request.POST.get('prod')
+        produto_preco = request.POST.get('preco')
+        produto_obs = request.POST.get('obs')
+        produto_tipo = request.POST.get('tipo')
+        produto1.nome = produto_nome
+        produto1.preco= produto_preco
+        produto1.obs= produto_obs
+        produto1.tipo= produto_tipo
+        produto1.save()
+        msg = "Produto editado com sucesso!"
+        return render(request, 'home/home.html', {'title':'Home','msg':msg})
+    return render(request, 'editaprod1.html', {'title':'Edita produto','produto1':produto1})
