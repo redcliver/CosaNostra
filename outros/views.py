@@ -37,13 +37,6 @@ def addservico1(request):
     return render(request, 'addservico1.html', {'title':'Confirmar Servico', 'nome':nome, 'preco':preco, 'obs':obs})
 
 def addfuncionario(request):
-    return render(request, 'addfuncionario.html', {'title':'Adicionar Funcionario'})
-
-def addfuncionario1(request):
-    nome = request.GET.get('nome')
-    func = request.GET.get('func')
-    tel1 = request.GET.get('tel1')
-    tel2 = request.GET.get('tel2')
     if request.method == 'POST':
         nome = request.POST.get('nome')
         func = request.POST.get('func')
@@ -53,7 +46,7 @@ def addfuncionario1(request):
         func1.save()
         msg = "Funcionario Registrado com sucesso!"
         return render(request, 'home/home.html', {'title':'Home', 'msg':msg})
-    return render(request, 'addfuncionario1.html', {'title':'Confirma Funcionario', 'nome':nome, 'func':func, 'tel1':tel1, 'tel2':tel2})
+    return render(request, 'addfuncionario.html', {'title':'Adicionar Funcionario'})
 
 def buscacomanda(request):
     if request.method == 'POST':
