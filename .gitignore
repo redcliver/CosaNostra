@@ -98,3 +98,6 @@ env2/
 
 # mypy
 .mypy_cache/
+
+# sqlite
+*.sqlite3
