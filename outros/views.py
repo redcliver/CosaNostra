@@ -83,7 +83,7 @@ def editaprod1(request):
     produto_id = request.GET.get('id')
     produto1 = produto.objects.filter(id=produto_id).get()
     if request.method == 'POST':
-        produto_nome = request.POST.get('prod')
+        produto_nome = request.POST.get('nome')
         produto_preco = request.POST.get('preco')
         produto_obs = request.POST.get('obs')
         produto_tipo = request.POST.get('tipo')
