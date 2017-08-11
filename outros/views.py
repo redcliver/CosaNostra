@@ -76,8 +76,7 @@ def editaprod(request):
         produtos = produto.objects.filter(nome__icontains=prod1)
         return render(request, 'editaprod.html', {'title':'Edita produto', 'produtos':produtos})
     if request.method == 'GET' and request.GET.get('id') != None:
-        produto_id = request.GET.get('id')
-        return render(request, 'editaprod1.html', {'title':'Edita produto','produto_id':produto_id})
+        return render(request, 'editaprod1.html', {'title':'Edita produto'})
     return render(request, 'editaprod.html', {'title':'Edita produto'})
 
 def editaprod1(request):
@@ -94,5 +93,5 @@ def editaprod1(request):
         produto1.tipo= produto_tipo
         produto1.save()
         msg = "Produto editado com sucesso!"
-        return render(request, 'home/home.html', {'title':'Home','msg':msg})
-    return render(request, 'editaprod1.html', {'title':'Edita produto','produto1':produto1})
+        return render(request, 'home/home.html', {'title':'Home', 'msg':msg})
+    return render(request, 'editaprod1.html', {'title':'Edita produto', 'produto1':produto1})
