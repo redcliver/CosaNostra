@@ -10,3 +10,4 @@ psycopg2
 whitenoise
 requests
 pylint
+dj-database-url
