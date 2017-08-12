@@ -133,9 +133,6 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
 
-<<<<<<< HEAD
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
-=======
 
->>>>>>> bbc718402407711237a5d529da7d99b3758b673a
