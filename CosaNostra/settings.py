@@ -26,7 +26,7 @@ SECRET_KEY = 'e0701af1-1c37-429e-bdc8-7f3200c1dd68'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cosanostra66.herokuapp.com']
+ALLOWED_HOSTS = ['cosanostrabarbearia.herokuapp.com']
 
 
 # Application definition
@@ -133,5 +133,9 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
 
+<<<<<<< HEAD
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
+=======
+
+>>>>>>> bbc718402407711237a5d529da7d99b3758b673a
