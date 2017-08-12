@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block body %}
+<form method="post">
+    {% csrf_token %}
+    <div class="row">
+        <div class=" row">
+            <div class="col-md-6">
+                Nome:<br />
+                <input autofocus class="form-control" value="{{produto1.nome}}" name="nome" type="text" />
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                Preco:<br />
+                <input class="form-control" value="{{produto1.preco}}" name="preco" type="text" />
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                Obs:<br />
+                <input class="form-control" value="{{produto1.obs}}" name="obs" type="text" />
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                Tipo:<br />
+                <input class="form-control" value="{{produto1.tipo}}" name="tipo" type="text" />
+                <br />
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <button type="submit" class="btn btn-default">Alterar</button>
+    </div>
+</form>
+{% endblock %}

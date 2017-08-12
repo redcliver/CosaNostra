@@ -44,6 +44,6 @@ def extratodetalhado(request):
     hoje = datetime.date.today()
     jeff = funcionario.objects.filter(nome__icontains="jef").get()
     rubens = funcionario.objects.filter(nome__icontains="rub").get()
-    cmd_jefferson = servico1.objects.all().filter(funcionario2__nome=jeff)
-    cmd_rubens = servico1.objects.all().filter(funcionario2__nome=rubens)
+    cmd_jefferson = servico1.objects.all().filter(funcionario2__nome=jeff, comanda_corte__data__icontains=hoje)
+    cmd_rubens = servico1.objects.all().filter(funcionario2__nome=rubens, comanda_corte__data__icontains=hoje)
     return render(request, 'extratodetalhado.html', {'title':'Extrato detalhado', 'cmd_jefferson':cmd_jefferson, 'cmd_rubens':cmd_rubens})
