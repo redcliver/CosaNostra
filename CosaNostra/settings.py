@@ -86,16 +86,8 @@ TEMPLATES = [
 WSGI_APPLICATION = 'CosaNostra.wsgi.application'
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cosanostra1',
-        'USER': 'postgres',
-        'PASSWORD': '3355',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
