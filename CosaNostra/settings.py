@@ -89,11 +89,12 @@ WSGI_APPLICATION = 'CosaNostra.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'IGOR',                      
-        'USER': 'IGOR',
+        'NAME': 'IGOR',
+        # 'NAME': os.path.join(BASE_DIR, 'mydb'),
+        'USER': 'igor',
         'PASSWORD': 'igor3355',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'HOST': '127.0.0.1',
+        'PORT': '', # 8000 is default
     }
 }
 DATABASES['default'] =  dj_database_url.config()
