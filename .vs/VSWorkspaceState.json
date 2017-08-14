@@ -1,16 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-<<<<<<< HEAD
-    "\\env"
+    ""
   ],
-  "SelectedNode": "\\CosaNostra",
-=======
-    "\\env",
-    "\\env\\Lib",
-    "\\env\\Lib\\site-packages"
-  ],
-  "SelectedNode": "\\env\\Lib\\site-packages",
->>>>>>> 8b650e6298bb61bf542a31c70f497fcc04a30ae8
   "PreviewInSolutionExplorer": false
 }
