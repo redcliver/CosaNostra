@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'CosaNostra.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'IGOR',                      
         'USER': 'IGOR',
         'PASSWORD': 'igor3355',
