@@ -14,7 +14,6 @@ import os
 import posixpath
 import dj_database_url
 
-import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -87,11 +86,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'CosaNostra.wsgi.application'
 
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'IGOR',                      
         'USER': 'IGOR',
         'PASSWORD': 'igor3355',
@@ -99,6 +96,9 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+DATABASES['default'] =  dj_database_url.config()
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -139,6 +139,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+
 
 
 
