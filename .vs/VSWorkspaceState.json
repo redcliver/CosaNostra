@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\caixa\\templates",
-    "\\home"
+    "\\env",
+    "\\env\\Lib",
+    "\\env\\Lib\\site-packages"
   ],
-  "SelectedNode": "\\home\\urls.py",
+  "SelectedNode": "\\env\\Lib\\site-packages",
   "PreviewInSolutionExplorer": false
 }
