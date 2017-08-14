@@ -87,8 +87,8 @@ WSGI_APPLICATION = 'CosaNostra.wsgi.application'
 
 
 
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+
+DATABASES['default'] = dj_database_url.config(default='postgres://localhost:5432/igor')
 
 
 # Password validation
@@ -127,9 +127,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
-STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
