@@ -88,19 +88,7 @@ WSGI_APPLICATION = 'CosaNostra.wsgi.application'
 import dj_database_url
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
-<<<<<<< HEAD
-=======
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'IGOR',                      
-        'USER': 'IGOR',
-        'PASSWORD': 'igor3355',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
->>>>>>> 96a069a9bf7ea790eb2e8a95d7b7682907a94d59
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -142,9 +130,5 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 96a069a9bf7ea790eb2e8a95d7b7682907a94d59
