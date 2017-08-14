@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 import posixpath
+import dj_database_url
 
 import dj_database_url
 
@@ -28,7 +29,10 @@ SECRET_KEY = 'e0701af1-1c37-429e-bdc8-7f3200c1dd68'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cosanostra66.herokuapp.com']
+ALLOWED_HOSTS = [
+    'cosanostra66.herokuapp.com',
+    'localhost:5000',
+]
 
 
 # Application definition
@@ -84,10 +88,13 @@ TEMPLATES = [
 WSGI_APPLICATION = 'CosaNostra.wsgi.application'
 
 
+<<<<<<< HEAD
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 
+=======
+>>>>>>> 8b650e6298bb61bf542a31c70f497fcc04a30ae8
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -139,6 +146,10 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
 
+<<<<<<< HEAD
 import dj_database_url
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
+=======
+
+>>>>>>> 8b650e6298bb61bf542a31c70f497fcc04a30ae8

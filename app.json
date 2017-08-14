@@ -4,6 +4,11 @@
   "scripts": {
   },
   "env": {
+    "env": {
+      "scripts": {
+        "test-setup": "python manage.py collectstatic --noinput",
+        "test": "python manage.py test"
+      }
   },
   "formation": {
   },
