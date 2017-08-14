@@ -14,6 +14,8 @@ import os
 import posixpath
 import dj_database_url
 
+import dj_database_url
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -29,7 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'cosanostra66.herokuapp.com',
-    'localhost:5000',
+    'localhost',
 ]
 
 
@@ -87,9 +89,16 @@ WSGI_APPLICATION = 'CosaNostra.wsgi.application'
 
 
 
-
-DATABASES['default'] = dj_database_url.config(default='postgres://localhost:5432/igor')
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'IGOR',                      
+        'USER': 'IGOR',
+        'PASSWORD': 'igor3355',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -127,12 +136,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
-# Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-)
+STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+
+
+
+
