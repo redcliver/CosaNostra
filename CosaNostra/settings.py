@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 import posixpath
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -29,6 +30,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'cosanostra66.herokuapp.com',
     'localhost',
+    'cosanostrabarbearia.com',
 ]
 
 
@@ -86,7 +88,6 @@ WSGI_APPLICATION = 'CosaNostra.wsgi.application'
 
 DATABASES = {
     'default': {
-
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'cosanostra',
         'USER': 'igor',
