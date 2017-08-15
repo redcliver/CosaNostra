@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from agenda.models import agenda
-import datetime
+from django.utils import timezone
 from outros.models import comanda_corte, servico1
 from caixa.models import caixa
 # Create your views here.
 
 def agenda1(request):
-    hoje = datetime.date.today()
+    hoje = timezone.now()
     agendas = agenda.objects.filter(data__icontains=hoje, confirmado='N')
     
     if request.method == 'POST':

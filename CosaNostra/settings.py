@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 import posixpath
-import dj_database_url
-import psycopg2
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -88,22 +86,15 @@ WSGI_APPLICATION = 'CosaNostra.wsgi.application'
 
 DATABASES = {
     'default': {
-<<<<<<< HEAD
+
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'IGOR',
-        # 'NAME': os.path.join(BASE_DIR, 'mydb'),
+        'NAME': 'cosanostra',
         'USER': 'igor',
-=======
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'IGOR',                      
-        'USER': 'IGOR',
->>>>>>> 50bc93d7010226cd61899a31d0c448ce2b4ed05d
         'PASSWORD': 'igor3355',
         'HOST': '127.0.0.1',
         'PORT': '', # 8000 is default
     }
 }
-DATABASES['default'] =  dj_database_url.config()
 
 
 
