@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-﻿{% extends 'base.html' %}
+{% extends 'base.html' %}
 {% block body %}
 <form method="POST">
     {% csrf_token %}
@@ -13,74 +12,4 @@
 
     <button type="submit" class="btn btn-default">Buscar</button>
 </form>
-<form method="GET" action="/outros/editaprod1">
-
-    <div class="row">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Preço</th>
-                    <th>Obs</th>
-                    <th>Tipo</th>
-                    <th>Editar</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for produto in produtos %}
-                <tr>
-                    <td>{{produto.nome}}</td>
-                    <td>{{produto.preco}}</td>
-                    <td>{{produto.obs}}</td>
-                    <td>{{produto.tipo}}</td>
-                    <td><button class="btn btn-default" value={{produto.id}} name="id" type="submit">Editar</button></td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-</form>
-=======
-﻿{% extends 'base.html' %}
-{% block body %}
-<form method="POST">
-    {% csrf_token %}
-    <div class=" row">
-        <div class="col-md-6">
-            Produto:<br />
-            <input autofocus class="form-control" name="prod" type="text" />
-            <br />
-        </div>
-    </div>
-
-    <button type="submit" class="btn btn-default">Buscar</button>
-</form>
-<form method="GET" action="/outros/editaprod1">
-
-    <div class="row">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Preço</th>
-                    <th>Obs</th>
-                    <th>Tipo</th>
-                    <th>Editar</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for produto in produtos %}
-                <tr>
-                    <td>{{produto.nome}}</td>
-                    <td>{{produto.preco}}</td>
-                    <td>{{produto.obs}}</td>
-                    <td>{{produto.tipo}}</td>
-                    <td><button class="btn btn-default" value={{produto.id}} name="id" type="submit">Editar</button></td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-</form>
->>>>>>> effa0d3fac25fd43baf0fb9d3eb06fa6e1c47750
 {% endblock %}
