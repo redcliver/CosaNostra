@@ -6,7 +6,10 @@ from decimal import *
 # Create your views here.
 
 def caixa1(request):
-    total = caixa.objects.latest('id')
+    try:
+        total = caixa.objects.latest('id')
+    except:
+        total = None
     return render(request, 'caixa.html', {'title':'Caixa', 'total':total})
 
 def extrato(request):

@@ -9,10 +9,11 @@ def outros(request):
 def addproduto(request):
     if request.method == 'POST':
         nome = request.POST.get('nome')
-        preco = request.POST.get('preco')
+        preco_comp = request.POST.get('preco_comp')
+        preco_vend = request.POST.get('preco_vend')
         tipo = request.POST.get('tipo')
         obs = request.POST.get('obs')
-        produto1 = produto(nome=nome, preco=preco, tipo=tipo, obs=obs)
+        produto1 = produto(nome=nome, preco_comp=preco_comp, preco_vend=preco_vend, tipo=tipo, obs=obs)
         produto1.save()
         msg = "Produto cadastrado com sucesso!"
         return render(request, 'home/home.html', {'title':'Home', 'msg':msg})
@@ -84,11 +85,13 @@ def editaprod1(request):
     produto1 = produto.objects.filter(id=produto_id).get()
     if request.method == 'POST':
         produto_nome = request.POST.get('nome')
-        produto_preco = request.POST.get('preco')
+        produto_preco_comp = request.POST.get('preco_comp')
+        produto_preco_vend = request.POST.get('preco_vend')
         produto_obs = request.POST.get('obs')
         produto_tipo = request.POST.get('tipo')
         produto1.nome = produto_nome
-        produto1.preco= produto_preco
+        produto1.preco_comp= produto_preco_comp
+        produto1.preco_vend= produto_preco_vend
         produto1.obs= produto_obs
         produto1.tipo= produto_tipo
         produto1.save()

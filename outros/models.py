@@ -13,11 +13,16 @@ class servico(models.Model):
         return self.nome
 
 class produto(models.Model):
+    TIPOS = (
+        ('P', 'Barbearia'),
+        ('B', 'Bar'),
+    )
     id = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=200)
-    preco = models.DecimalField(max_digits=5, decimal_places=2)
+    preco_comp = models.DecimalField(max_digits=5, decimal_places=2)
+    preco_vend = models.DecimalField(max_digits=5, decimal_places=2)
     obs = models.CharField(max_length=200, null=True, blank=True)
-    tipo = models.CharField(max_length=200, null=True, blank=True)
+    tipo = models.CharField(max_length=1, choices=TIPOS)
 
     def __str__(self):
         return self.nome
