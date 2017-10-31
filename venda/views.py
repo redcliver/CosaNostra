@@ -95,7 +95,7 @@ def fechacomanda1(request):
         cmd1.save()
         caixatotal1 = caixa.objects.latest('id')
         caixatotal1.total = caixatotal1.total+cmd1.total
-        desc1 = "Comanda N°: " + str(cmd1.id)
+        desc1 = "Comanda Bar N°: " + str(cmd1.id)
         caixatotal2 = caixa(total=caixatotal1.total, tipo='E', desc=desc1)
         caixatotal2.save()
         msg = "Comanda fechada com sucesso!"
