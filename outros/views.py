@@ -14,7 +14,8 @@ def addproduto(request):
         tipo = request.POST.get('tipo')
         obs = request.POST.get('obs')
         qnt = request.POST.get('qnt')
-        produto1 = produto(nome=nome, preco_comp=preco_comp, preco_vend=preco_vend, tipo=tipo, obs=obs, qnt=qnt)
+        qnt_minima = request.POST.get('qnt_minima')
+        produto1 = produto(nome=nome, preco_comp=preco_comp, preco_vend=preco_vend, tipo=tipo, obs=obs, qnt=qnt, qnt_minima=qnt_minima)
         produto1.save()
         msg = "Produto cadastrado com sucesso!"
         return render(request, 'home/home.html', {'title':'Home', 'msg':msg})
@@ -89,12 +90,14 @@ def editaprod1(request):
         produto_preco_comp = request.POST.get('preco_comp')
         produto_preco_vend = request.POST.get('preco_vend')
         produto_qnt = request.POST.get('qnt')
+        produto_qnt_minima = request.POST.get('qnt_minima')
         produto_obs = request.POST.get('obs')
         produto_tipo = request.POST.get('tipo')
         produto1.nome = produto_nome
         produto1.preco_comp= produto_preco_comp
         produto1.preco_vend= produto_preco_vend
         produto1.qnt = produto_qnt
+        produto1.qnt_minima = produto_qnt_minima
         produto1.obs= produto_obs
         produto1.tipo= produto_tipo
         produto1.save()

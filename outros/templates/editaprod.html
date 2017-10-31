@@ -21,6 +21,8 @@
                     <th>Nome</th>
                     <th>Preço compra</th>
                     <th>Preço venda</th>
+                    <th>Qnatidade</th>
+                    <th>Qnatidade Min.</th>
                     <th>Obs</th>
                     <th>Tipo</th>
                     <th>Editar</th>
@@ -32,6 +34,8 @@
                     <td>{{produto.nome}}</td>
                     <td>{{produto.preco_comp}}</td>
                     <td>{{produto.preco_vend}}</td>
+                    <td>{{produto.qnt}}</td>
+                    <td>{{produto.qnt_minima}}</td>
                     <td>{{produto.obs}}</td>
                     {% if produto.tipo == 'B' %}
                         <td>Bar</td>
