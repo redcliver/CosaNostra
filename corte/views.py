@@ -28,7 +28,7 @@ def imediato(request):
         comanda1.save()
         caixatotal1 = caixa.objects.latest('id')
         caixatotal1.total = caixatotal1.total + comanda1.total
-        desc1 = "Comanda_Corte N°: " + str(comanda1.id)
+        desc1 = "Comanda Corte N°: " + str(comanda1.id)
         total2 = Decimal(caixatotal1.total)
         caixatotal2 = caixa(total=total2, tipo='E', desc=desc1)
         caixatotal2.save()
