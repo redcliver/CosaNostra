@@ -25,17 +25,27 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-md-2">
+                Quantidade:<br />
+                <input class="form-control" value="{{produto1.qnt}}" name="qnt" type="number" />
+                <br />
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-4">
                 Obs:<br />
                 <input class="form-control" value="{{produto1.obs}}" name="obs" type="text" />
                 <br />
             </div>
         </div>
-        <div class="row">
+        <div class=" row">
             <div class="col-md-4">
                 Tipo:<br />
-                <input class="form-control" value="{{produto1.tipo}}" name="tipo" type="text" />
-                <br />
+                <select name="tipo" class="form-control">
+                    <option value="P">Barbearia</option>
+                    <option value="B">Bar</option>
+                </select>
+            <br />
             </div>
         </div>
         <br />

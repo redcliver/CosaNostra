@@ -33,7 +33,12 @@
                     <td>{{produto.preco_comp}}</td>
                     <td>{{produto.preco_vend}}</td>
                     <td>{{produto.obs}}</td>
-                    <td>{{produto.tipo}}</td>
+                    {% if produto.tipo == 'B' %}
+                        <td>Bar</td>
+                    {% endif %}
+                    {% if produto.tipo == 'P' %}
+                        <td>Barbearia</td>
+                    {% endif %}
                     <td><button class="btn btn-default" value={{produto.id}} name="id" type="submit">Editar</button></td>
                 </tr>
                 {% endfor %}

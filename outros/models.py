@@ -21,6 +21,7 @@ class produto(models.Model):
     nome = models.CharField(max_length=200)
     preco_comp = models.DecimalField(max_digits=5, decimal_places=2)
     preco_vend = models.DecimalField(max_digits=5, decimal_places=2)
+    qnt = models.IntegerField()
     obs = models.CharField(max_length=200, null=True, blank=True)
     tipo = models.CharField(max_length=1, choices=TIPOS)
 

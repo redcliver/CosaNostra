@@ -6,28 +6,38 @@
         <div class=" row">
             <div class="col-md-6">
                 Nome:<br />
-                <input autofocus class="form-control" size="200" maxlength="200" name="nome" type="text" />
+                <input autofocus class="form-control" size="200" maxlength="200" name="nome" type="text" required/>
                 <br />
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
                 Valor de compra:<br />
-                <input class="form-control" size="11" maxlength="11" name="preco_comp" type="text" />
+                <input class="form-control" size="11" maxlength="11" name="preco_comp" type="text" required />
                 <br />
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
                 Valor de venda:<br />
-                <input class="form-control" size="11" maxlength="11" name="preco_vend" type="text" />
+                <input class="form-control" size="11" maxlength="11" name="preco_vend" type="text" required />
                 <br />
             </div>
         </div>
-        <div class="row">
+        <div class=" row">
             <div class="col-md-4">
                 Tipo:<br />
-                <input class="form-control" maxlength="100" name="tipo" type="text" />
+                <select name="tipo" class="form-control">
+                    <option value="P">Barbearia</option>
+                    <option value="B">Bar</option>
+                </select>
+            <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                Quantidade:<br />
+                <input class="form-control" maxlength="200" name="qnt" type="number" required/>
                 <br />
             </div>
         </div>

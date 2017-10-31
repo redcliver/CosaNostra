@@ -8,9 +8,9 @@ def home(request):
     # Your Auth Token from twilio.com/console
     auth_token  = "3f8d71550aa6731e856291f76da6e030"
 
-    client = Client(account_sid, auth_token)
-    msg1 = "Este e um teste de msg"
-    message = client.messages.create(to="+5567991865754", from_="(559) 869-4092",body=msg1)
+    #client = Client(account_sid, auth_token)
+    #msg1 = "Este e um teste de msg"
+    #message = client.messages.create(to="+5567991865754", from_="(559) 869-4092",body=msg1)
     msg = "Mensagem enviada com sucesso!"
     return render(request, 'home/home.html', {'title':'Home', 'msg':msg})
 
