@@ -29,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'cosanostra66.herokuapp.com',
-    'localhost',
+    '127.0.0.1',
     'cosanostrabarbearia.com',
 ]
 
@@ -91,14 +91,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'cosanostra',
         'USER': 'postgres',
-        'PASSWORD': '3355',
+        'PASSWORD': 'igor3355',
         'HOST': '127.0.0.1',
         'PORT': '', # 8000 is default
     }
 }
 
-DATABASES['default'] =  dj_database_url.config()
 
+DATABASES['default'] = dj_database_url.config()
 
 
 # Password validation
