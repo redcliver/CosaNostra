@@ -86,19 +86,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'CosaNostra.wsgi.application'
  
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'cosanostra',
-        'USER': 'postgres',
-        'PASSWORD': 'igor3355',
-        'HOST': '127.0.0.1',
-        'PORT': '', # 8000 is default
-    }
-}
 
-
-DATABASES['default'] = dj_database_url.config()
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -143,5 +133,5 @@ STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
 
 SENDSMS_BACKEND = 'sendsms.backends.console.SmsBackend'
 
-
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
