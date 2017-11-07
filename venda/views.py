@@ -106,4 +106,4 @@ def fechacomanda1(request):
             item.produto1.save()
         msg = "Comanda fechada com sucesso!"
         return render(request, 'home/home.html', {'title':'Home', 'msg':msg})
-    return render(request, 'fechacomanda1.html', {'title':'Conferir Itens', 'comanda1':comanda1, 'teste':teste, 'cmd1':cmd1})
+    return render(request, 'fechacomanda1.html', {'title':'Conferir Itens', 'comanda1':comanda1, 'produtos_all':produtos_all, 'cmd1':cmd1})
