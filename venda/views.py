@@ -89,7 +89,7 @@ def fechacomanda(request):
 def fechacomanda1(request):
     comanda1 = request.GET.get('comanda')
     cmd1 = comanda.objects.filter(num=comanda1, estado='O').get()
-    teste = cmd1.produtos.all()
+    produtos_all = cmd1.produtos.all()
     if request.method == 'POST':
         cmd1.estado = 'C'
         cmd1.save()
@@ -98,6 +98,12 @@ def fechacomanda1(request):
         desc1 = "Comanda Bar N°: " + str(cmd1.id)
         caixatotal2 = caixa(total=caixatotal1.total, tipo='E', desc=desc1)
         caixatotal2.save()
+        for item in produtos_all:
+            qnt_1 = item.qnt
+            qnt_2 = item.produto1.qnt
+            qnt_total =qnt_2-qnt_1
+            item.produto1.qnt = qnt_total
+            item.produto1.save()
         msg = "Comanda fechada com sucesso!"
         return render(request, 'home/home.html', {'title':'Home', 'msg':msg})
     return render(request, 'fechacomanda1.html', {'title':'Conferir Itens', 'comanda1':comanda1, 'teste':teste, 'cmd1':cmd1})
