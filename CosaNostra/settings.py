@@ -31,6 +31,7 @@ ALLOWED_HOSTS = [
     'cosanostra66.herokuapp.com',
     'localhost',
     'cosanostrabarbearia.com',
+    'rodao.herokuapp.com',
 ]
 
 
